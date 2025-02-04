@@ -1,10 +1,8 @@
+<x-layout>
+    <x-slot:title>
+        Add User Data
+        </x-slot>
 
-@extends('layout')
-@section('title')
-Add new User
-@endsection
-
-@section('content')
             <form action="{{route('user.store')}}" method="POST">
                 @csrf
                 <div class="mb-3">
@@ -27,4 +25,5 @@ Add new User
                     <input type="submit" value="Save" class="btn btn-success">
                 </div>
             </form>
-@endsection
+</x-layout>
+

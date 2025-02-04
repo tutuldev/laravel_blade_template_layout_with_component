@@ -1,9 +1,7 @@
-@extends('layout')
-@section('title')
-User Details
-@endsection
-
-@section('content')
+<x-layout>
+    <x-slot:title>
+        View User Data
+        </x-slot>
             <table class="table table-bordered table-striped">
                 <tr>
                     <th width="80px">Name:</th>
@@ -26,4 +24,5 @@ User Details
                 </tr>
             </table>
             <a href="{{route('user.index')}}" class="btn btn-danger">Back</a>
-@endsection
+</x-layout>
+

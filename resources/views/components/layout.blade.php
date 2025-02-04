@@ -10,22 +10,27 @@
 <body>
 <div class="container">
     <div class="row">
-        <div class="col-8">
-            <h1>@yield('title')</h1>
+        <div class="col-8 bg-success-subtle text-center py-2">
+            <h2>Crud with Componet</h2>
         </div>
     </div>
      <div class="row">
-        <div class="col-8">
-            @if (session('status'))
-                <div class="alert alert-success">
-                     {{session('status')}}
-                </div>
-            @endif
+        <div class="col-8 bg-warning-subtle mb-3">
+            <h4>{{$title ?? "CRUD Component"}}</h4>
         </div>
      </div>
     <div class="row">
         <div class="col-8">
-           @yield('content')
+            @if (session('status'))
+             <div class="alert alert-success">
+                {{session('status')}}
+            </div>
+             @endif
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-8">
+            {{$slot}}
         </div>
     </div>
 </div>

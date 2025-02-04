@@ -1,10 +1,7 @@
-
-@extends('layout')
-@section('title')
-Update User Data
-@endsection
-
-@section('content')
+<x-layout>
+    <x-slot:title>
+        Update User Data
+        </x-slot>
             <form action="{{route('user.update',$users->id)}}" method="POST">
                 @csrf
                 @method('PUT')
@@ -33,4 +30,5 @@ Update User Data
                     <input type="submit" value="Save" class="btn btn-success">
                 </div>
             </form>
-@endsection
+</x-layout>
+

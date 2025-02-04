@@ -1,10 +1,8 @@
-@extends('layout')
-@section('title')
-All User Data
-@endsection
-
-@section('content')
-<a href="{{route('user.create')}}" class="btn btn-success btn-sm mb-3">Add New</a>
+<x-layout>
+    <x-slot:title>
+    All User Data
+    </x-slot>
+        <a href="{{route('user.create')}}" class="btn btn-success btn-sm mb-3">Add New</a>
             <table class="table table-bordered table-striped">
                 <tr>
                     <th>Id</th>
@@ -38,4 +36,5 @@ All User Data
             <div class="mt-4">
                 {{$users->links()}}
             </div>
-@endsection
+
+</x-layout>
