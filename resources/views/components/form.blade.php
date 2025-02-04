@@ -1,3 +1,12 @@
-<div>
-    <!-- It is never too late to be what you might have been. - George Eliot -->
-</div>
+@props([
+    'action',
+    'method' => 'POST'
+])
+<form action="{{$action}}" method="{{$method ==='GET' ? 'GET' : 'POST'}}" {{$attributes}}>
+    @csrf
+    {{-- for put and delete  --}}
+    @unless (in_array($method,['GET','POST']))
+     @method($method)
+    @endunless
+    {{$slot}}
+</form>

@@ -2,9 +2,8 @@
     <x-slot:title>
         Update User Data
         </x-slot>
-            <form action="{{route('user.update',$users->id)}}" method="POST">
-                @csrf
-                @method('PUT')
+            <x-form action="{{route('user.update',$users->id)}}" method="PUT" >
+
                 <pre>
                     {{-- @php
                         print_r($errors->all())
@@ -29,6 +28,6 @@
                 <div class="mb-3">
                     <input type="submit" value="Save" class="btn btn-success">
                 </div>
-            </form>
+            </x-form>
 </x-layout>
 

@@ -3,8 +3,8 @@
         Add User Data
         </x-slot>
 
-            <form action="{{route('user.store')}}" method="POST">
-                @csrf
+            <x-form action="{{route('user.store')}}" >
+              {{-- not need csrf and method  for component  --}}
                 <div class="mb-3">
                     <label for="username" class="form-label">User Name</label>
                     <input type="text" class="form-control" name="username">
@@ -24,6 +24,6 @@
                 <div class="mb-3">
                     <input type="submit" value="Save" class="btn btn-success">
                 </div>
-            </form>
+            </x-form>
 </x-layout>
 
